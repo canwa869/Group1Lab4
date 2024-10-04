@@ -200,4 +200,5 @@ browseVignettes("lab00004")
 
 #' @import ggplot2
 NULL
+remotes::install_github("klutometis/roxygen")
 
