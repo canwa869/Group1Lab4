@@ -6,7 +6,7 @@ Date: 2024-10-01
 Author: Can Wang & Han Xia
 Maintainer: Can Wang & Han Xia
 Description: A package
-
+License: MIT
 Suggests: 
     knitr,
     rmarkdown,
@@ -17,7 +17,7 @@ Imports:
     ggplot2,
     gridExtra,
     devtools,
-    remotes, 
+    remotes,
     rcmdcheck
 Encoding: UTF-8
 

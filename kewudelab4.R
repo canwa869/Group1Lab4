@@ -189,6 +189,8 @@ summary(mod_object)
 package.skeleton("lab00004")
 getwd()
 setwd("C:/Users/0529y/Desktop/semester1/Advanced Programming in R/Git/lab04/lab00004")
+usethis::use_description()
+
 library(devtools)
 use_testthat()
 usethis::use_vignette("introduction")
@@ -202,3 +204,9 @@ browseVignettes("lab00004")
 NULL
 remotes::install_github("klutometis/roxygen")
 
+install.packages("devtools")
+library(devtools)
+devtools::clean()
+devtools::install() 
+deps <- devtools::dev_package_deps()
+print(deps)  
