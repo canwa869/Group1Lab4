@@ -160,11 +160,11 @@ summary.linreg <- function(X) {
     Standard_Error = S2,
     t_value = S3,
     p_value = S4,
-    Significance = character(length(S4)),  # 创建用于存储显著性符号的列
+    Significance = character(length(S4)), 
     stringsAsFactors = FALSE
   )
   
-  # 为每个系数计算显著性符号
+
   for (i in seq_along(S4)) {
     if (S4[i] < 0.001) {
       result$Significance[i] <- "***"
@@ -177,7 +177,6 @@ summary.linreg <- function(X) {
     }
   }
   
-  # 打印结果
   print(result, row.names = TRUE)
   
   cat("Residual standard error:", S5, "on", X$degrees_of_freedom,"degrees of freedom")
