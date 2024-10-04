@@ -34,7 +34,7 @@ jobs:
         run: |
           install.packages(c("remotes", "rcmdcheck", "devtools","ggplot2","gridExtra","devtools"))
           remotes::install_deps(dependencies = TRUE)
-          devtools::dev_package_deps()
+         
         shell: Rscript {0}
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
