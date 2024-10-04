@@ -210,3 +210,6 @@ devtools::clean()
 devtools::install() 
 deps <- devtools::dev_package_deps()
 print(deps)  
+devtools::document()
+devtools::build_vignettes()
+
