@@ -1,4 +1,4 @@
-Package: lab00004
+vPackage: lab00004
 Type: Package
 Title: project (short line)
 Version: 1.0
@@ -18,5 +18,7 @@ Imports:
     gridExtra,
     dplyr,
     stats，
-    dvools
+    devtools,
+    remotes, 
+    rcmdcheck
 Encoding:UTF-8
