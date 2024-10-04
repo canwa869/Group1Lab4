@@ -91,7 +91,6 @@ print(mod_object)
 #' @name plot.linreg
 #' @import ggplot2
 #' @importFrom stats fitted residuals rstandard
-#' 
 #' @export
 library(ggplot2)
 library(gridExtra)
