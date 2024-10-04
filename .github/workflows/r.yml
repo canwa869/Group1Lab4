@@ -32,7 +32,11 @@ jobs:
           r-version: ${{ matrix.r-version }}
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck", "devtools"))
+          install.packages("remotes")
+          install.packages("rcmdcheck")
+          install.packages("devtools")
+          install.packages("ggplot2")
+          install.packages("gridExtra")
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
       - name: Check
