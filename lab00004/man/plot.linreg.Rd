@@ -2,10 +2,17 @@
 % Please edit documentation in R/plot.linreg.R
 \name{plot.linreg}
 \alias{plot.linreg}
-\title{Plot Residuals vs Fitted and Scale-Location}
+\title{Plot Residuals from Linear Regression}
 \arguments{
-\item{model}{A linear model object created by lm().}
+\item{linreg_mod}{A linear model object (of class `lm`).}
+}
+\value{
+Two ggplot objects are printed: 
+1. A plot of residuals vs fitted values.
+2. A plot of the square root of standardized residuals vs fitted values.
 }
 \description{
-This function generates two diagnostic plots for linear regression models.
+This function takes a linear regression model and plots the residuals
+against the fitted values and the standardized residuals against the 
+fitted values.
 }

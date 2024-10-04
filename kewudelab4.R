@@ -76,19 +76,25 @@ mod_object <- linreg(Petal.Length~Species, data = iris)
 print(mod_object)
 
 
-#' Plot Residuals vs Fitted and Scale-Location
+#' Plot Residuals from Linear Regression
 #'
-#' This function generates two diagnostic plots for linear regression models.
+#' This function takes a linear regression model and plots the residuals
+#' against the fitted values and the standardized residuals against the 
+#' fitted values.
 #'
-#' @param model A linear model object created by lm().
-#'
-#' @importFrom ggplot2 ggplot aes geom_point geom_smooth labs theme_minimal
-#' @importFrom gridExtra grid.arrange
+#' @param linreg_mod A linear model object (of class `lm`).
+#' 
+#' @return Two ggplot objects are printed: 
+#' 1. A plot of residuals vs fitted values.
+#' 2. A plot of the square root of standardized residuals vs fitted values.
+#' @name plot.linreg
+#' @import ggplot2
+#' @importFrom stats fitted residuals rstandard
+#' 
 #' @export
-
 library(ggplot2)
 library(gridExtra)
-linreg_mod <- lm(Petal.Length ~ Species, data = iris)
+plot.linreg <- function(linreg_mod){
 fitted_values <- fitted(linreg_mod)
 residuals <- residuals(linreg_mod)
 std_residuals <- rstandard(linreg_mod)
@@ -117,6 +123,9 @@ p2 <- ggplot(plot_data, aes(x = fitted_values, y = sqrt(abs(std_residuals)))) +
        y = expression(sqrt("Standardized residuals")), title = "Scale-Location") +
   theme_minimal()
 print(p2)
+}
+linreg_mod <- lm(Petal.Length ~ Species, data = iris)
+plot.linreg(linreg_mod)
 
 #' Residuals method
 #'
