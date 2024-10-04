@@ -5,7 +5,6 @@ fitted_values <- fitted(linreg_mod)
 residuals <- residuals(linreg_mod)
 std_residuals <- rstandard(linreg_mod)
 plot_data <- data.frame(fitted_values, residuals, std_residuals)
-rownames(plot_data) <- rownames(iris)
 plot_data$index <- 1:nrow(plot_data)
 p1 <- ggplot(plot_data, aes(x = fitted_values, y = residuals)) +
   geom_point(shape = 1, 
