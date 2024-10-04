@@ -31,10 +31,7 @@ jobs:
         with:
           r-version: ${{ matrix.r-version }}
       - name: Install dependencies
-        run: |
-         install.packages("remotes")
-         install.packages("rcmdcheck")
-         install.packages("devtools")
+        run: 
          install.packages("ggplot2")
          install.packages("gridExtra")
          remotes::install_deps(dependencies = TRUE)
