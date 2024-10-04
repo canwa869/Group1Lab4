@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2024-10-01
 Author: Han Xia & Can Wang
 Maintainer: Maintainer: Can Wang <canwa869@student.liu.se>
-Description: A package
+Description: A package.
 License: MIT
 Suggests: 
     knitr,
