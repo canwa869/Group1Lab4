@@ -1,10 +1,11 @@
 #' summary
 #'
 #' @param X 
+#' @param ... Additional arguments to be passed to or from methods.
 #' @return summary
 #' @export
 #' 
-summary.linreg <- function(X) {
+summary.linreg <- function(X,...) {
   
   S1 <- X$coefficients
   S2 <- X$standard_error

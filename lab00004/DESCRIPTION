@@ -1,16 +1,16 @@
 Package: lab00004
 Type: Package
-Title: project (short line)
+Title: Linear Regression Analysis Package
 Version: 1.0
 Date: 2024-10-01
 Author: Han Xia & Can Wang
-Maintainer: Maintainer: Can Wang <canwa869@student.liu.se>
-Description: A package.
+Maintainer: Can Wang <canwa869@student.liu.se>
+Description: A package for performing linear regression analysis and visualization.
 License: MIT
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Imports:

@@ -62,9 +62,10 @@ print(mod_object)
 #' print
 #'
 #' @param X 
+#' @param ... Additional arguments to be passed to or from methods.
 #' @return An object
 #' @export
-print.linreg <- function(X) {
+print.linreg <- function(X,...) {
   cat("Call:", "\n")
   cat("linreg(formula = ", deparse(X$formula), ", data = ", X$name, ")\n\n", sep = "")
   cat("\ncoefficients:\n")
@@ -130,9 +131,10 @@ plot.linreg(linreg_mod)
 #' Residuals method
 #'
 #' @param X An object
+#' @param ... Additional arguments to be passed to or from methods.
 #' @return A vector of residuals
 #' @export
-resid.linreg <- function(X) {
+resid.linreg <- function(X,...) {
   return(X$residuals)
 }
 
@@ -148,20 +150,22 @@ pred.linreg <- function(X) {
 #' Coefficients method
 #'
 #' @param X An object
+#' @param ... Additional arguments to be passed to or from methods.
 #' @return A named vector of coefficients
 #' @export
-coef.linreg <- function(X) {
+coef.linreg <- function(X,...) {
   return(setNames(X$coefficients, paste0("Coefficient ", seq_along(X$coefficients))))
 }
 
 #' summary
 #'
 #' @param X 
+#' @param ... Additional arguments to be passed to or from methods.
 #' @return summary
 #' @export
 #' 
 
-summary.linreg <- function(X) {
+summary.linreg <- function(X,...) {
 
   S1 <- X$coefficients
   S2 <- X$standard_error
@@ -225,4 +229,3 @@ deps <- devtools::dev_package_deps()
 print(deps)  
 devtools::document()
 devtools::build_vignettes()
-

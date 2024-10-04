@@ -4,10 +4,12 @@
 \alias{resid.linreg}
 \title{Residuals method}
 \usage{
-\method{resid}{linreg}(X)
+\method{resid}{linreg}(X, ...)
 }
 \arguments{
 \item{X}{An object}
+
+\item{...}{Additional arguments to be passed to or from methods.}
 }
 \value{
 A vector of residuals

@@ -4,10 +4,12 @@
 \alias{coef.linreg}
 \title{Coefficients method}
 \usage{
-\method{coef}{linreg}(X)
+\method{coef}{linreg}(X, ...)
 }
 \arguments{
 \item{X}{An object}
+
+\item{...}{Additional arguments to be passed to or from methods.}
 }
 \value{
 A named vector of coefficients
