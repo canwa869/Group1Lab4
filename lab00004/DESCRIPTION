@@ -14,6 +14,10 @@ Suggests:
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Imports:
-    ggplot2
-Encoding:UTF-8
+    ggplot2,
+    gridExtra,
+    devtools,
+    remotes, 
+    rcmdcheck
+Encoding: UTF-8
 
