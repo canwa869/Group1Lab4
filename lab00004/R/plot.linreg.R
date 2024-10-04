@@ -1,3 +1,17 @@
+#' Plot Residuals vs Fitted and Scale-Location
+#'
+#' This function generates two diagnostic plots for linear regression models.
+#'
+#' @param model A linear model object created by lm().
+#' @name plot.linreg
+#' @importFrom ggplot2 ggplot aes geom_point geom_smooth labs theme_minimal
+#' @importFrom gridExtra grid.arrange
+#'
+#' @examples
+#' linreg_mod <- lm(Petal.Length ~ Species, data = iris)
+#' plot_diagnostics(linreg_mod)
+#'
+#' @export
 library(ggplot2)
 library(gridExtra)
 linreg_mod <- lm(Petal.Length ~ Species, data = iris)

@@ -1,3 +1,9 @@
+#' summary
+#'
+#' @param X 
+#' @return summary
+#' @export
+#' 
 summary.linreg <- function(X) {
   
   S1 <- X$coefficients

@@ -1,3 +1,10 @@
+#' Linear Regression using Ordinary Least Squares
+#'
+#' @param X The design matrix (n x p) with n observations and p predictors.
+#' @param y The response vector (n x 1) with n observations.
+#' @return An object of class "linreg" containing many parameters.
+#' @export
+
 linreg <- function(formula, data){
   X <- model.matrix(formula, data)
   y <- data[[all.vars(formula)[1]]] 

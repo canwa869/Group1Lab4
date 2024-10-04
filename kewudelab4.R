@@ -76,10 +76,19 @@ mod_object <- linreg(Petal.Length~Species, data = iris)
 print(mod_object)
 
 
-#' plot
+#' Plot Residuals vs Fitted and Scale-Location
 #'
-#' @param X An object
-#' @param ... other parameter
+#' This function generates two diagnostic plots for linear regression models.
+#'
+#' @param model A linear model object created by lm().
+#'
+#' @importFrom ggplot2 ggplot aes geom_point geom_smooth labs theme_minimal
+#' @importFrom gridExtra grid.arrange
+#'
+#' @examples
+#' linreg_mod <- lm(Petal.Length ~ Species, data = iris)
+#' plot_diagnostics(linreg_mod)
+#'
 #' @export
 
 library(ggplot2)
