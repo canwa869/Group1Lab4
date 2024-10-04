@@ -30,7 +30,7 @@ jobs:
           brew install pandoc  # 使用 Homebrew 安装 Pandoc
       - name: Check all packages
         run: |
-            Rscript -e "setwd('$pkg'); install.packages(c('remotes', 'rcmdcheck'), repos='https://cloud.r-project.org/'); remotes::install_deps(dependencies = TRUE); rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')" done
+            Rscript -e "setwd('$GITHUB_WORKSPACE')"; install.packages(c('remotes', 'rcmdcheck'), repos='https://cloud.r-project.org/'); remotes::install_deps(dependencies = TRUE); rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')" done
         shell: bash
 
 
