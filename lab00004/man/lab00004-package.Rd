@@ -13,7 +13,7 @@
 The DESCRIPTION file:
 \packageDESCRIPTION{lab00004}
 \packageIndices{lab00004}
-~~ An overview of how to use the package, including the most important functions ~~
+An overview of how to use the package, including the most important functions
 }
 \author{
 \packageAuthor{lab00004}
@@ -21,15 +21,15 @@ The DESCRIPTION file:
 Maintainer: \packageMaintainer{lab00004}
 }
 \references{
-~~ Literature or other references for background information ~~
+Literature or other references for background information
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation ~~
-~~ directory ~~
+Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation
+directory
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+Optional links to other man pages, e.g.
+\code{\link[<pkg>:<pkg>-package]{<pkg>}} 
 }
 \examples{
-~~ simple examples of the most important functions ~~
+simple examples of the most important functions 
 }

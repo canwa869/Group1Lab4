@@ -9,8 +9,3 @@
 \description{
 This function generates two diagnostic plots for linear regression models.
 }
-\examples{
-linreg_mod <- lm(Petal.Length ~ Species, data = iris)
-plot_diagnostics(linreg_mod)
-
-}
