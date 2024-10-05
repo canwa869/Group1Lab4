@@ -1,7 +1,7 @@
 #' Linear Regression using Ordinary Least Squares
 #'
-#' @param X The design matrix (n x p) with n observations and p predictors.
-#' @param y The response vector (n x 1) with n observations.
+#' @param formula The formula.
+#' @param data The data.
 #' @return An object of class "linreg" containing many parameters.
 #' @export
 
@@ -76,6 +76,8 @@ data(iris)
 mod_object <- linreg(Petal.Length~Species, data = iris)
 print(mod_object)
 
+library(ggplot2)
+library(gridExtra)
 
 #' Plot Residuals from Linear Regression
 #'
@@ -92,8 +94,6 @@ print(mod_object)
 #' @import ggplot2
 #' @importFrom stats fitted residuals rstandard
 #' @export
-library(ggplot2)
-library(gridExtra)
 plot.linreg <- function(linreg_mod){
 fitted_values <- fitted(linreg_mod)
 residuals <- residuals(linreg_mod)
@@ -228,3 +228,5 @@ deps <- devtools::dev_package_deps()
 print(deps)  
 devtools::document()
 devtools::build_vignettes()
+install.packages("remotes") 
+remotes::install_github("r-lib/roxygen2", force = TRUE)

@@ -7,9 +7,9 @@
 linreg(formula, data)
 }
 \arguments{
-\item{X}{The design matrix (n x p) with n observations and p predictors.}
+\item{formula}{The formula.}
 
-\item{y}{The response vector (n x 1) with n observations.}
+\item{data}{The data.}
 }
 \value{
 An object of class "linreg" containing many parameters.

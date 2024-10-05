@@ -4,8 +4,7 @@
 #' against the fitted values and the standardized residuals against the 
 #' fitted values.
 #'
-#' @param linreg_mod A linear model object (of class `lm`).
-#' 
+#' @param linreg_mod A linear model object.
 #' @return Two ggplot objects are printed: 
 #' 1. A plot of residuals vs fitted values.
 #' 2. A plot of the square root of standardized residuals vs fitted values.
@@ -13,8 +12,6 @@
 #' @import ggplot2
 #' @importFrom stats fitted residuals rstandard
 #' @export
-library(ggplot2)
-library(gridExtra)
 plot.linreg <- function(linreg_mod){
   fitted_values <- fitted(linreg_mod)
   residuals <- residuals(linreg_mod)

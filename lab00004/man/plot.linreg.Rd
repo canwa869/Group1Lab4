@@ -3,8 +3,11 @@
 \name{plot.linreg}
 \alias{plot.linreg}
 \title{Plot Residuals from Linear Regression}
+\usage{
+\method{plot}{linreg}(linreg_mod)
+}
 \arguments{
-\item{linreg_mod}{A linear model object (of class `lm`).}
+\item{linreg_mod}{A linear model object.}
 }
 \value{
 Two ggplot objects are printed: 
