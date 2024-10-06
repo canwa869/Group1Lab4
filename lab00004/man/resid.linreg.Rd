@@ -4,7 +4,7 @@
 \alias{resid.linreg}
 \title{Residuals method}
 \usage{
-\method{resid}{linreg}(X, ...)
+\method{resid}{linreg}(object, ...)
 }
 \arguments{
 \item{X}{An object}
