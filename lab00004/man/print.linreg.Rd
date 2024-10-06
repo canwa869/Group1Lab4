@@ -4,7 +4,7 @@
 \alias{print.linreg}
 \title{print}
 \usage{
-\method{print}{linreg}(X, ...)
+\method{print}{linreg}(object, ...)
 }
 \arguments{
 \item{X}{}
