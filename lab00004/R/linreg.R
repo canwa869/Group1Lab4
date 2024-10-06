@@ -7,8 +7,8 @@
 
 linreg <- function(formula, data){
   X <- model.matrix(formula, data)
-  y <- data[[all.vars(formula)[1]]] 
-  # variables <- all.vars(formula)[-1] 
+  y <- data[[all.vars(formula)[1]]]
+  # variables <- all.vars(formula)[-1]
   name<- deparse(substitute(data))
   beta_hat <- solve(t(X) %*% X) %*% t(X) %*% y
   y_hat <- X %*% beta_hat
