@@ -31,10 +31,7 @@ jobs:
         run: |
           Rscript -e "install.packages('remotes', repos='https://cloud.r-project.org/')"
           Rscript -e "install.packages('ggplot2', repos='https://cloud.r-project.org/')"
-      - name: Check all packages
-        run: |
-          Rscript -e "remotes::install_deps(dependencies = TRUE)"
-          Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
+          Rscript -e "install.packages('rcmdcheck', repos='https://cloud.r-project.org/')"
       - name: Check all packages
         run: |
           Rscript -e "remotes::install_deps(dependencies = TRUE)"
