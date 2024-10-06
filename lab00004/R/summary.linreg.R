@@ -5,22 +5,22 @@
 #' @return summary
 #' @export
 #' 
-summary.linreg <- function(X,...) {
-  
-  S1 <- X$coefficients
-  S2 <- X$standard_error
-  S3 <- X$t_values
-  S4 <- X$p_values
-  S5 <- X$Residual_standard_error
+summary.linreg <- function(object,...) {
+
+  S1 <- object$coefficients
+  S2 <- object$standard_error
+  S3 <- object$t_values
+  S4 <- object$p_values
+  S5 <- object$Residual_standard_error
   result <- data.frame(
     Coefficient = S1,
     Standard_Error = S2,
     t_value = S3,
     p_value = S4,
-    Significance = character(length(S4)), 
+    Significance = character(length(S4)),
     stringsAsFactors = FALSE
   )
-  
+
   for (i in seq_along(S4)) {
     if (S4[i] < 0.001) {
       result$Significance[i] <- "***"
@@ -32,8 +32,8 @@ summary.linreg <- function(X,...) {
       result$Significance[i] <- ""
     }
   }
-  
+
   print(result, row.names = TRUE)
-  
-  cat("Residual standard error:", S5, "on", X$degrees_of_freedom,"degrees of freedom")
-} 
+
+  cat("Residual standard error:", S5, "on", object$degrees_of_freedom,"degrees of freedom")
+}
