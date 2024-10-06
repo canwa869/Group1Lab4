@@ -32,5 +32,4 @@ jobs:
           Rscript -e "install.packages(c('ggplot2', 'stats'), repos='https://cloud.r-project.org/')"
           Rscript -e "remotes::install_deps(dependencies = TRUE)"
           Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
-
         shell: bash
