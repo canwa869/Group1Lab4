@@ -4,10 +4,10 @@
 \alias{summary.linreg}
 \title{summary}
 \usage{
-\method{summary}{linreg}(X, ...)
+\method{summary}{linreg}(object, ...)
 }
 \arguments{
-\item{X}{}
+\item{object}{}
 
 \item{...}{Additional arguments to be passed to or from methods.}
 }
