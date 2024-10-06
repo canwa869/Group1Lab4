@@ -4,7 +4,7 @@
 \alias{pred.linreg}
 \title{Predicted values method}
 \usage{
-pred.linreg(X)
+pred.linreg(object)
 }
 \arguments{
 \item{X}{An object}
