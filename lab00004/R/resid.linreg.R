@@ -4,6 +4,7 @@
 #' @param ... Additional arguments to be passed to or from methods.
 #' @return A vector of residuals
 #' @export
-resid.linreg <- function(X,...) {
-  return(X$residuals)
+resid.linreg <- function(object,...) {
+  return(object$residuals)
 }
+
