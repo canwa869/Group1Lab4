@@ -27,9 +27,16 @@ jobs:
       - name: Install Pandoc
         run: |
           brew install pandoc  # 使用 Homebrew 安装 Pandoc
+      - name: Install required packages
+        run: |
+          Rscript -e "install.packages('remotes', repos='https://cloud.r-project.org/')"
+          Rscript -e "install.packages('ggplot2', repos='https://cloud.r-project.org/')"
       - name: Check all packages
         run: |
-          Rscript -e "install.packages(c('ggplot2', 'stats'), repos='https://cloud.r-project.org/')"
+          Rscript -e "remotes::install_deps(dependencies = TRUE)"
+          Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
+      - name: Check all packages
+        run: |
           Rscript -e "remotes::install_deps(dependencies = TRUE)"
           Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
         shell: bash
