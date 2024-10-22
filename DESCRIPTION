@@ -1,6 +1,6 @@
 Package: lab00004
 Type: Package
-Title: project (short line)
+Title: Linear Regression Analysis Package
 Version: 1.0
 Date: 2024-10-01
 Author: Can Wang , Han Xia
@@ -17,3 +17,4 @@ Imports:
     stats,
     knitr
 Encoding: UTF-8
+RoxygenNote: 7.3.2.9000
