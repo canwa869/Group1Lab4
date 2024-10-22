@@ -9,7 +9,7 @@ vignette: >
 ---
 # Introduction
 
-In this vignette, we will demonstrate how to use the `linreg` function from the `lab00004` package using a well-known dataset. For illustration, we'll use the `iris` dataset.
+In this vignette, we will demonstrate how to use the `linreg` function from the `Group1Lab4` package using a well-known dataset. For illustration, we'll use the `iris` dataset.
 
 The `linreg` function fits a linear regression model, and it comes with several methods for extracting useful information such as residuals, fitted values, coefficients, and diagnostics plots.
 
@@ -22,5 +22,5 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(lab00004)
+library(Group1Lab4)
 ```
