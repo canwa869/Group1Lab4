@@ -3,13 +3,13 @@ Type: Package
 Title: Linear Regression Analysis Package
 Version: 1.0
 Date: 2024-10-01
-Author: Can Wang , Han Xia
-Maintainer: Can Wang<canwa869@student.liu.se> , Han Xia<hanxi898@student.liu.se>
+Author: Han Xia & Can Wang
+Maintainer: Can Wang <canwa869@student.liu.se>
 Description: This package provides functions performing linear regression analysis and visualization.
 License: GPL-3
 Suggests: 
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 Imports:

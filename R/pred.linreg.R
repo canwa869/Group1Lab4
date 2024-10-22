@@ -1,6 +1,6 @@
 #' Predicted values method
 #'
-#' @param X An object
+#' @param object An object
 #' @return A vector of predicted values
 #' @export
 pred.linreg <-

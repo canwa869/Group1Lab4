@@ -7,7 +7,7 @@
 \method{summary}{linreg}(object, ...)
 }
 \arguments{
-\item{object}{data}
+\item{object}{}
 
 \item{...}{Additional arguments to be passed to or from methods.}
 }

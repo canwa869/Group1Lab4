@@ -1,6 +1,6 @@
 #' Coefficients method
 #'
-#' @param X An object
+#' @param object An object
 #' @param ... Additional arguments to be passed to or from methods.
 #' @return A named vector of coefficients
 #' @export

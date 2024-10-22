@@ -2,15 +2,18 @@
 % Please edit documentation in R/coef.linreg.R
 \name{coef.linreg}
 \alias{coef.linreg}
-\title{Title}
+\title{Coefficients method}
 \usage{
 \method{coef}{linreg}(object, ...)
 }
 \arguments{
-\item{object}{a}
+\item{object}{An object}
 
-\item{...}{a}
+\item{...}{Additional arguments to be passed to or from methods.}
+}
+\value{
+A named vector of coefficients
 }
 \description{
-Title
+Coefficients method
 }

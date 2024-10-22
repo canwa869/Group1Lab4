@@ -1,6 +1,6 @@
 #' summary
 #'
-#' @param X 
+#' @param object 
 #' @param ... Additional arguments to be passed to or from methods.
 #' @return summary
 #' @export

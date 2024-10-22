@@ -7,7 +7,7 @@
 pred.linreg(object)
 }
 \arguments{
-\item{X}{An object}
+\item{object}{An object}
 }
 \value{
 A vector of predicted values

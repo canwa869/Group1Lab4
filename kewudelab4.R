@@ -230,3 +230,21 @@ devtools::document()
 devtools::build_vignettes()
 install.packages("remotes") 
 remotes::install_github("r-lib/roxygen2", force = TRUE)
+
+
+# 使用 devtools 安装最新版本的 roxygen2
+devtools::install_github("klutometis/roxygen")
+
+
+rm -f ~/.RData ~/.Rhistory
+update.packages(ask = FALSE)
+tools::package_dependencies("lab00004", recursive = TRUE)
+remove.packages("lab00004")
+install.packages("path_to_your_package.tar.gz", INSTALL_opts = "--no-lazy")
+
+rm(list = ls())
+gc()
+
+
+
+
