@@ -202,49 +202,16 @@ data(iris)
 mod_object <- linreg(Petal.Length~Sepal.Width+Sepal.Length, data=iris)
 summary(mod_object)
 
-package.skeleton("lab00004")
+
 getwd()
-setwd("C:/Users/0529y/Desktop/semester1/Advanced Programming in R/Git/lab04/lab00004")
+
 usethis::use_description()
 
 library(devtools)
 use_testthat()
 usethis::use_vignette("introduction")
-
-
-devtools::install("C:/Users/0529y/Desktop/semester1/Advanced Programming in R/Git/lab04/lab00004")
-
-browseVignettes("lab00004")
-
-#' @import ggplot2
-NULL
-remotes::install_github("klutometis/roxygen")
-
-install.packages("devtools")
-library(devtools)
-devtools::clean()
-devtools::install() 
-deps <- devtools::dev_package_deps()
-print(deps)  
-devtools::document()
-devtools::build_vignettes()
-install.packages("remotes") 
-remotes::install_github("r-lib/roxygen2", force = TRUE)
-
-
-# 使用 devtools 安装最新版本的 roxygen2
-devtools::install_github("klutometis/roxygen")
-
-
-rm -f ~/.RData ~/.Rhistory
-update.packages(ask = FALSE)
-tools::package_dependencies("lab00004", recursive = TRUE)
-remove.packages("lab00004")
-install.packages("path_to_your_package.tar.gz", INSTALL_opts = "--no-lazy")
-
-rm(list = ls())
-gc()
-
-devtools::check()
-
-
+?linreg
+?Group1Lab4
+?plot.linreg
+object<- lm(Petal.Length ~ Species, data = iris)
+plot(object$residuals, main = "Residuals Plot", xlab = "Index", ylab = "Residuals")

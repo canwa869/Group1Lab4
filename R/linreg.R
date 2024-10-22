@@ -47,3 +47,131 @@ linreg <- function(formula, data){
   class(result) <- "linreg"
   return(result)
 }
+
+#' Plot Residuals from Linear Regression
+#'
+#' This function takes a linear regression model and plots the residuals against the fitted values and the standardized residuals against the fitted values.
+#'
+#' @param x An object of class 'linreg', typically the result of a linear regression model.
+#' @param ... Additional arguments passed to or from other methods.
+#' @return Two ggplot objects are printed: 
+#' 1. A plot of residuals vs fitted values.
+#' 2. A plot of the square root of standardized residuals vs fitted values.
+#' @export
+plot.linreg <- function(x,...){
+  fitted_values <- fitted(x)
+  residuals <- residuals(x)
+  std_residuals <- rstandard(x)
+  plot_data <- data.frame(fitted_values, residuals, std_residuals)
+  plot_data$index <- 1:nrow(plot_data)
+  p1 <- ggplot(plot_data, aes(x = fitted_values, y = residuals)) +
+    geom_point(shape = 1,
+               size = 2,
+               color = "black") +
+    geom_smooth(se = FALSE, color = "red") +
+    geom_text(aes(label = ifelse(abs(residuals) > 1.1, index, "")),
+              hjust = -0.2, vjust = -0.5) +
+    labs(x = "Fitted values\nlm(Petal.Length ~ Species)",
+         y = "Residuals", title = "Residuals vs Fitted") +
+    theme_minimal()
+  
+  print(p1)
+  p2 <- ggplot(plot_data, aes(x = fitted_values, y = sqrt(abs(std_residuals)))) +
+    geom_point(shape = 1,
+               size = 2,
+               color = "black") +
+    geom_smooth(se = FALSE, color = "red") +
+    geom_text(aes(label = ifelse(sqrt(abs(std_residuals)) > 1.6, index, "")),
+              hjust = -0.2, vjust = -0.5) +
+    labs(x = "Fitted values\nlm(Petal.Length ~ Species)",
+         y = expression(sqrt("Standardized residuals")), title = "Scale-Location") +
+    theme_minimal()
+  print(p2)
+}
+#' summary
+#'
+#' @param object 
+#' @param ... Additional arguments to be passed to or from methods.
+#' @return summary
+#' @export
+summary.linreg <- function(object,...) {
+  
+  S1 <- object$coefficients
+  S2 <- object$standard_error
+  S3 <- object$t_values
+  S4 <- object$p_values
+  S5 <- object$Residual_standard_error
+  result <- data.frame(
+    Coefficient = S1,
+    Standard_Error = S2,
+    t_value = S3,
+    p_value = S4,
+    Significance = character(length(S4)),
+    stringsAsFactors = FALSE
+  )
+  
+  for (i in seq_along(S4)) {
+    if (S4[i] < 0.001) {
+      result$Significance[i] <- "***"
+    } else if (S4[i] < 0.01) {
+      result$Significance[i] <- "**"
+    } else if (S4[i] < 0.05) {
+      result$Significance[i] <- "*"
+    } else {result$Significance[i] <- ""
+    }
+  }
+  
+  print(result, row.names = TRUE)
+  
+  cat("Residual standard error:", S5, "on", object$degrees_of_freedom,"degrees of freedom")
+}
+
+#' Coefficients method
+#'
+#' @param object An object
+#' @param ... Additional arguments to be passed to or from methods.
+#' @return A named vector of coefficients
+#' @export
+coef.linreg <- function(object,...) {
+  return(setNames(object$coefficients, paste0("Coefficient ", seq_along(object$coefficients))))
+}
+
+#' Predicted values method
+#'
+#' @param object An object
+#' @return A vector of predicted values
+#' @export
+pred.linreg <-
+  function(object) {
+    return(object$fitted_values)
+  }
+
+#' print
+#'
+#' @param x  
+#' @param ... Additional arguments to be passed to or from methods.
+#' @return An object
+#' @export
+print.linreg <- function(x,...) {
+  cat("Call:", "\n")
+  cat("linreg(formula = ", deparse(x$formula), ", data = ", x$name, ")\n\n", sep = "")
+  cat("\ncoefficients:\n")
+  W<- t(x$coefficients)
+  print(W)
+}
+
+#' Residuals method
+
+#' @param object An object of class 'linreg'.
+#' @param ... Additional arguments to be passed to or from methods.
+#' @return A vector of residuals
+#' @export
+resid <- function(object,...){
+  UseMethod("resid")
+} 
+
+#' @export
+resid.linreg <- function(object,...) {
+  return(object$residuals)
+}
+
