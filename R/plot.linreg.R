@@ -1,8 +1,6 @@
 #' Plot Residuals from Linear Regression
 #'
-#' This function takes a linear regression model and plots the residuals
-#' against the fitted values and the standardized residuals against the 
-#' fitted values.
+#' This function takes a linear regression model and plots the residuals against the fitted values and the standardized residuals against the fitted values.
 #'
 #' @param x An object of class 'linreg', typically the result of a linear regression model.
 #' @param ... Additional arguments passed to or from other methods.

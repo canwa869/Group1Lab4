@@ -17,7 +17,5 @@ Two ggplot objects are printed:
 2. A plot of the square root of standardized residuals vs fitted values.
 }
 \description{
-This function takes a linear regression model and plots the residuals
-against the fitted values and the standardized residuals against the 
-fitted values.
+This function takes a linear regression model and plots the residuals against the fitted values and the standardized residuals against the fitted values.
 }

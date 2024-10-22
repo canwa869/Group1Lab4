@@ -245,6 +245,6 @@ install.packages("path_to_your_package.tar.gz", INSTALL_opts = "--no-lazy")
 rm(list = ls())
 gc()
 
-
+devtools::check()
 
 

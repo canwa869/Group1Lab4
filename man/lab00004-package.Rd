@@ -1,33 +1,33 @@
-\name{lab00004-package}
-\alias{lab00004-package}
-\alias{lab00004}
+\name{Group1Lab4-package}
+\alias{Group1Lab4-package}
+\alias{Group1Lab4}
 \docType{package}
 \title{
-\packageTitle{lab00004}
+Group1Lab4:A Package for Solving Problems
 }
 \description{
-\packageDescription{lab00004}
+\packageDescription{Group1Lab4}
 }
 \details{
 
 The DESCRIPTION file:
-\packageDESCRIPTION{lab00004}
-\packageIndices{lab00004}
+\packageDESCRIPTION{Group1Lab4}
+\packageIndices{Group1Lab4}
 An overview of how to use the package, including the most important functions
 }
 \author{
-\packageAuthor{lab00004}
+Can Wang and Han Xia
 
-Maintainer: \packageMaintainer{lab00004}
+Maintainer: Can Wang (\email{canwa869@student.liu.se})
 }
 \references{
 Literature or other references for background information
 }
 \keyword{ package }
 \seealso{
-Optional links to other man pages, e.g.
 \code{\link[<pkg>:<pkg>-package]{<pkg>}} 
 }
 \examples{
-simple examples of the most important functions 
+# Example of solving a problem:
 }
+\keyword{package}
