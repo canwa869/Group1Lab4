@@ -42,11 +42,37 @@ linreg <- function(formula, data){
     data = data,
     name = name,
     standard_error = standard_error,
-    Residual_standard_error = Residual_standard_error
+    Residual_standard_error = Residual_standard_error,
+    rank = p,
+    df_residual = df,  
+    weights = rep(1, n),  
+    qr = qr(X) 
   )
   class(result) <- "linreg"
   return(result)
 }
+
+#' rstandard method for linreg objects
+#'
+#' @param X An object of class 'linreg'.
+#' @param ... Additional arguments (not used currently).
+#' @return A vector of standardized residuals.
+#' @export
+
+rstandard <- function(X, ...) {
+UseMethod("rstandard")
+}
+#' @export
+#' @method rstandard linreg
+rstandard.linreg <- function(X, ...) {
+  residuals <- X$residuals
+  hat_values <- lm.influence(X)$hat 
+  sigma <- X$Residual_standard_error
+  std_residuals <- X$residuals / (sigma * sqrt(1 - lm.influence(X)$hat))
+  return(std_residuals)
+}
+
+
 
 #' Plot Residuals from Linear Regression
 #'
@@ -58,9 +84,10 @@ linreg <- function(formula, data){
 #' 1. A plot of residuals vs fitted values.
 #' 2. A plot of the square root of standardized residuals vs fitted values.
 #' @export
+
 plot.linreg <- function(x,...){
-  fitted_values <- fitted(x)
-  residuals <- residuals(x)
+  fitted_values <- x$fitted_values
+  residuals <- x$residuals
   std_residuals <- rstandard(x)
   plot_data <- data.frame(fitted_values, residuals, std_residuals)
   plot_data$index <- 1:nrow(plot_data)
@@ -174,4 +201,6 @@ resid <- function(object,...){
 resid.linreg <- function(object,...) {
   return(object$residuals)
 }
+
+
 

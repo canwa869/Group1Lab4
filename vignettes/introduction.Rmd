@@ -9,18 +9,58 @@ vignette: >
 ---
 # Introduction
 
-In this vignette, we will demonstrate how to use the `linreg` function from the `Group1Lab4` package using a well-known dataset. For illustration, we'll use the `iris` dataset.
+In this vignette, we will demonstrate how to use the linreg function from the Group1Lab4 package using a well-known dataset. For illustration, we'll use the iris dataset.
 
-The `linreg` function fits a linear regression model, and it comes with several methods for extracting useful information such as residuals, fitted values, coefficients, and diagnostics plots.
+The linreg function fits a linear regression model, and it comes with several methods for extracting useful information such as residuals, fitted values, coefficients, and diagnostics plots.
 
 # Loading the package
-```{r, include = FALSE}
+First, we need to load the necessary packages:
+
+{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-```
 
-```{r setup}
+
+{r setup}
 library(Group1Lab4)
-```
+
+# Load the package and ggplot2 for plotting
+library(Group1Lab4)
+library(ggplot2)
+
+Next, we will fit a linear regression model using the linreg function:
+
+# Fit the model using the linreg function
+model <- linreg(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data = iris)
+
+# Summary of the Model
+We can view a summary of the model to understand the coefficients and other statistics:
+
+summary(model)
+
+# Viewing Coefficients
+To see the coefficients of the fitted model:
+
+coef(model)
+
+# Predicted (Fitted) Values
+To obtain the predicted values from the model:
+
+pred(model)
+
+# Residuals
+We can also extract the residuals:
+
+resid(model)
+
+# Standardized Residuals
+To calculate standardized residuals, we can use the rstandard method:
+
+rstandard(model)
+
+# Diagnostic Plots
+Finally, we can create diagnostic plots to visualize the residuals:
+
+plot(model)

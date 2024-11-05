@@ -215,3 +215,33 @@ usethis::use_vignette("introduction")
 ?plot.linreg
 object<- lm(Petal.Length ~ Species, data = iris)
 plot(object$residuals, main = "Residuals Plot", xlab = "Index", ylab = "Residuals")
+# 1. 确保安装了 Rtools（对于 Windows 用户）
+# 2. 检查您的 R 包代码，确保没有错误
+# 3. 检查 Rtools 是否可用
+Sys.which("Rtools")
+
+# 4. 如果未安装，访问 https://cran.r-project.org/bin/windows/Rtools/ 下载并安装 Rtools
+
+# 5. 安装必要的依赖包
+install.packages(c("devtools", "roxygen2", "knitr"))
+
+# 6. 重新启动 R 会话
+
+# 7. 尝试加载包
+library(devtools)
+load_all("path_to_your_package/Group1Lab4")
+devtools::document()  # 更新文档
+devtools::install()
+devtools::install()
+library(Group1Lab4)
+devtools::document()
+install.packages("roxygen2")
+model <- linreg(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data = iris)
+std_residuals <- rstandard(model)
+print(std_residuals)
+rm(list = ls())
+library(roxygen2)
+roxygen2::roxygenise()
+remove.packages("roxygen2")
+packageVersion("roxygen2")
+
