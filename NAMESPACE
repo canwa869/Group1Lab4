@@ -2,11 +2,12 @@
 
 S3method(coef,linreg)
 S3method(plot,linreg)
+S3method(pred,linreg)
 S3method(print,linreg)
 S3method(resid,linreg)
 S3method(rstandard,linreg)
 S3method(summary,linreg)
 export(linreg)
-export(pred.linreg)
+export(pred)
 export(resid)
 export(rstandard)
