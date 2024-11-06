@@ -23,44 +23,45 @@ knitr::opts_chunk$set(
 )
 
 
-{r setup}
+```{r setup}
 library(Group1Lab4)
 
 # Load the package and ggplot2 for plotting
 library(Group1Lab4)
 library(ggplot2)
-
+```
 Next, we will fit a linear regression model using the linreg function:
-
+```{r example}
 # Fit the model using the linreg function
 model <- linreg(Sepal.Length ~ Sepal.Width + Petal.Length + Petal.Width, data = iris)
 
 # Summary of the Model
-We can view a summary of the model to understand the coefficients and other statistics:
+# We can view a summary of the model to understand the coefficients and other statistics:
 
 summary(model)
 
 # Viewing Coefficients
-To see the coefficients of the fitted model:
+# To see the coefficients of the fitted model:
 
 coef(model)
 
 # Predicted (Fitted) Values
-To obtain the predicted values from the model:
+# To obtain the predicted values from the model:
 
 pred(model)
 
 # Residuals
-We can also extract the residuals:
+# We can also extract the residuals:
 
 resid(model)
 
 # Standardized Residuals
-To calculate standardized residuals, we can use the rstandard method:
+# To calculate standardized residuals, we can use the rstandard method:
 
 rstandard(model)
 
 # Diagnostic Plots
-Finally, we can create diagnostic plots to visualize the residuals:
+# Finally, we can create diagnostic plots to visualize the residuals:
 
 plot(model)
+```
