@@ -254,3 +254,4 @@ roxygen2::roxygenise()
 remove.packages("roxygen2")
 packageVersion("roxygen2")
 
+devtools::install_github("canwa869/Group1Lab4")

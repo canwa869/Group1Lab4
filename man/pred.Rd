@@ -8,6 +8,8 @@ pred(object, ...)
 }
 \arguments{
 \item{object}{An object of class 'linreg'.}
+
+\item{...}{Additional arguments to be passed to or from methods.}
 }
 \value{
 A vector of predicted values.

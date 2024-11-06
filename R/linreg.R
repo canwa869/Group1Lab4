@@ -167,12 +167,14 @@ coef.linreg <- function(object,...) {
 #'
 #' @param object An object of class 'linreg'.
 #' @return A vector of predicted values.
+#' @param ... Additional arguments to be passed to or from methods.
 #' @export
 pred <- function(object, ...) {
   UseMethod("pred")
 }
 
 #' @export
+#' @method pred linreg
 pred.linreg <- function(object, ...) {
   return(object$fitted_values)
 }
